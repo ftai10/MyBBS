@@ -7,20 +7,11 @@
 // </自動生成>
 //------------------------------------------------------------------------------
 
-namespace MyBBS
+namespace MyBBS.Form.BBS
 {
 
 
-    public partial class SiteMaster
+    public partial class BBS
     {
-
-        /// <summary>
-        /// MainContent コントロール。
-        /// </summary>
-        /// <remarks>
-        /// 自動生成されたフィールド。
-        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
     }
 }

@@ -115,6 +115,12 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Form\BBS\BBS.aspx" />
+    <Content Include="Form\BBS\BBSTop.aspx" />
+    <Content Include="Form\Error.aspx" />
+    <Content Include="Form\User\UserRegisterComplete.aspx" />
+    <Content Include="Form\User\UserRegisterConfirm.aspx" />
+    <Content Include="Form\User\UserRegisterInput.aspx" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -182,6 +188,48 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\BBS\BBS.aspx.cs">
+      <DependentUpon>BBS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\BBS\BBS.aspx.designer.cs">
+      <DependentUpon>BBS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\BBS\BBSTop.aspx.cs">
+      <DependentUpon>BBSTop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\BBS\BBSTop.aspx.designer.cs">
+      <DependentUpon>BBSTop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\User\UserRegisterComplete.aspx.cs">
+      <DependentUpon>UserRegisterComplete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\User\UserRegisterComplete.aspx.designer.cs">
+      <DependentUpon>UserRegisterComplete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\User\UserRegisterConfirm.aspx.cs">
+      <DependentUpon>UserRegisterConfirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\User\UserRegisterConfirm.aspx.designer.cs">
+      <DependentUpon>UserRegisterConfirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Form\User\UserRegisterInput.aspx.cs">
+      <DependentUpon>UserRegisterInput.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Form\User\UserRegisterInput.aspx.designer.cs">
+      <DependentUpon>UserRegisterInput.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
