@@ -29,7 +29,11 @@ namespace MyBBS
         protected void Page_Load(object sender, EventArgs e)
         {
             // ここでセッション管理できる？
-
+            if (Session["UserId"] == null && this.Page.AppRelativeVirtualPath != "~/Form/BBS/BBSTop.aspx")
+            {
+                
+                Response.Redirect("~/Form/BBS/BBSTop.aspx");
+            } 
             // トップページのリストコントロール
         }
     }
