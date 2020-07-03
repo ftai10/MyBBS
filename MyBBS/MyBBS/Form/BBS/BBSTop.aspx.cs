@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNet.FriendlyUrls;
 using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -30,8 +32,9 @@ namespace MyBBS.Form.BBS
 
             if (true)
             {
+                lerrorMessage.Text = Master.GetConfigMessage("LoginError");
                 // Go to BBS
-                Response.Redirect("BBS.aspx");
+                //Response.Redirect("BBS.aspx");
             }
             else
             {

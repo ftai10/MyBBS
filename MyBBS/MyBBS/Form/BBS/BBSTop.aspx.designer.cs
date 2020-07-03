@@ -31,5 +31,19 @@ namespace MyBBS.Form.BBS
         /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal lerrorMessage;
+
+        /// <summary>
+        /// Master プロパティ。
+        /// </summary>
+        /// <remarks>
+        /// 自動生成されたプロパティ。
+        /// </remarks>
+        public new MyBBS.SiteMaster Master
+        {
+            get
+            {
+                return ((MyBBS.SiteMaster)(base.Master));
+            }
+        }
     }
 }

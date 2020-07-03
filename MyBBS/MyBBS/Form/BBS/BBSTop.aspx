@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="BBSTop.aspx.cs" Inherits="MyBBS.Form.BBS.BBSTop" %>
+<%@ MasterType VirtualPath ="~/Site.Master" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
      <div>
