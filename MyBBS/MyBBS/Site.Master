@@ -47,7 +47,7 @@
                         <li><a runat="server" href="~/">ホーム</a></li>
                         <li><a runat="server" href="~/About">詳細</a></li>
                         <li><a runat="server" href="~/Contact">問い合わせ</a></li>
-                        <li><a runat="server" href="~/Contact">会員登録</a></li>
+                        <li><a runat="server" href="~/Form/User/UserRegisterInput.aspx">会員登録</a></li>
                         <li><a runat="server" href="~/Contact">ユーザ編集登録</a></li>
 
                     </ul>

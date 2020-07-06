@@ -4,11 +4,11 @@
 
      <div>
           <span>ログインID</span>
-          <input id="inpLoginId" type="text" />
+          <input id="inpLoginId" type="text" runat="server" />
      </div>
      <div>
           <span>パスワード</span>
-          <input id="inpPassword" type="password" />
+          <input id="inpPassword" type="password" runat="server" />
      </div>
      <div>
          <asp:Button ID="btnLogin" runat="server" Text="ログイン" OnClick="btnLogin_Click" />

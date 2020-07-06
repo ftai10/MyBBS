@@ -60,6 +60,7 @@
   <ItemGroup>
     <Build Include="User.sql" />
     <Build Include="Thread.sql" />
+    <Build Include="BBSUser.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="memocode.txt" />

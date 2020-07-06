@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<BBSUser>
+
+  <!-- 取得 -->
+  <Get>
+    <Statement>
+      <![CDATA[
+        SELECT  *
+          FROM  BBSUser
+         WHERE  LoginId = @LoginId
+      ]]>
+    </Statement>
+    <Parameter>
+      <Input Name="LoginId" Type="nvarchar" Size="16" />
+    </Parameter>
+  </Get>
+
+  <!-- 更新 -->
+  <Update>
+    <Statement>
+      <![CDATA[
+        UPDATE  Sample
+           SET  text = @text
+         WHERE  id = @id
+      ]]>
+    </Statement>
+    <Parameter>
+      <Input Name="id" Type="nvarchar" Size="10" />
+      <Input Name="text" Type="nvarchar" Size="50" />
+    </Parameter>
+  </Update>
+
+</BBSUser>

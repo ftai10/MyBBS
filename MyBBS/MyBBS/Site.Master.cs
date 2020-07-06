@@ -12,7 +12,6 @@ namespace MyBBS
 {
     public partial class SiteMaster : MasterPage
     {
-        public int MyProperty { get; set; }
 
         /// <summary>
         /// 設定値よりConfigファイルの値を取得する
@@ -28,8 +27,10 @@ namespace MyBBS
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             // ここでセッション管理できる？
-            if (Session["UserId"] == null && this.Page.AppRelativeVirtualPath != "~/Form/BBS/BBSTop.aspx")
+            if (Session["UserId"] == null
+                &&this.Page.AppRelativeVirtualPath != "~/Form/BBS/BBSTop.aspx")
             {
                 
                 Response.Redirect("~/Form/BBS/BBSTop.aspx");
