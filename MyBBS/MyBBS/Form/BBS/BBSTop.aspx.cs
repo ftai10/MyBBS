@@ -35,6 +35,7 @@ namespace MyBBS.Form.BBS
 
             // Refer DB
             var user = Get(inpLoginId.Value);
+
             if (user != null)
             {
                 // Go to BBS
@@ -56,7 +57,8 @@ namespace MyBBS.Form.BBS
             {
                 var ht = new Hashtable
             {
-                {"LoginId", loginId}
+                {"LoginId", inpLoginId.Value},
+                {"Password", inpPassword.Value}
             };
                 var dv = statement.SelectSingleStatementWithOC(accessor, ht);
                 return (dv.Count != 0) ? dv[0] : null;

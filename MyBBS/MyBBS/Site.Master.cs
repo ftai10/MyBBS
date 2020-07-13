@@ -28,14 +28,27 @@ namespace MyBBS
         protected void Page_Load(object sender, EventArgs e)
         {
             
-            // ここでセッション管理できる？
-            if (Session["UserId"] == null
-                &&this.Page.AppRelativeVirtualPath != "~/Form/BBS/BBSTop.aspx")
+            // 有効なセッションがなく、セッションが必要なパスにアクセスした場合は、トップにリダイレクト
+            if (Session["UserId"] == null &&
+                this.NonSessionPahts().Contains(this.Page.AppRelativeVirtualPath) == false)
+                //&&this.Page.AppRelativeVirtualPath != "~/Form/BBS/BBSTop.aspx")
             {
                 
                 Response.Redirect("~/Form/BBS/BBSTop.aspx");
             } 
             // トップページのリストコントロール
+        }
+
+        /// <summary>
+        /// セッション不要なパスを定義する
+        /// </summary>
+        /// <returns></returns>
+        private List<string> NonSessionPahts()
+        {
+            return new List<string> {
+                                     "~/Form/BBS/BBSTop.aspx",
+                                     "~/Form/User/UserRegisterInput.aspx"
+                                    };
         }
     }
 }

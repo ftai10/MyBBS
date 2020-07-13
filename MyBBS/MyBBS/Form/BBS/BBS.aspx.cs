@@ -13,5 +13,15 @@ namespace MyBBS.Form.BBS
         {
 
         }
+
+        protected void editBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void rptBBS_ItemDataBound(object sender, RepeaterItemEventArgs e)
+        {
+
+        }
     }
 }

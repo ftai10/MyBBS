@@ -8,10 +8,13 @@
         SELECT  *
           FROM  BBSUser
          WHERE  LoginId = @LoginId
+           AND  Password = HASHBYTES('MD5', @Password)
       ]]>
     </Statement>
     <Parameter>
       <Input Name="LoginId" Type="nvarchar" Size="16" />
+      <Input Name="Password" Type="varchar" Size="16" />
+
     </Parameter>
   </Get>
 
@@ -29,5 +32,29 @@
       <Input Name="text" Type="nvarchar" Size="50" />
     </Parameter>
   </Update>
+
+  <Insert>
+    <Statement>
+      <![CDATA[      
+       INSERT INTO BBSUser
+          (
+            LoginId, 
+            Password,
+            CreateData
+          )
+      VALUES 
+          (
+            @LoginId,
+            HASHBYTES('MD5', @Password),
+            GetDate()
+           )
+      ]]>
+    </Statement>
+    <Parameter>
+      <Input Name="LoginId" Type="nvarchar" Size="16" />
+      <Input Name="Password" Type="varchar" Size="16" />
+    </Parameter>
+  </Insert>
+
 
 </BBSUser>
