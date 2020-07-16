@@ -3,8 +3,19 @@
      BBS TOP
     <!--  新規投稿フォーム -->
     <div>
-        <asp:TextBox ID="txTitle" runat="server" placeholder="タイトル" ></asp:TextBox>
-        <asp:TextBox ID="txContent" runat="server"　placeholder="本文を記載" ></asp:TextBox>
+        <div>
+            <asp:Literal ID="ltName" runat="server"></asp:Literal> 
+        </div>
+
+        <div>
+            <asp:TextBox ID="tbTitle" runat="server" placeholder="タイトル" ></asp:TextBox> 
+        </div>
+        <div>
+            <asp:TextBox ID="tbContent" runat="server"　placeholder="本文を記載" ></asp:TextBox>
+        </div>
+        <div>
+            <asp:Button  ID="btPost" runat="server" Text="投稿する" OnClick="btPost_Click"/>
+        </div>
     </div>
 
     <!-- 掲示板 -->

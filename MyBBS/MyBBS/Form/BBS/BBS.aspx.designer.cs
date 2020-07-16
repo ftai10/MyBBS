@@ -15,22 +15,40 @@ namespace MyBBS.Form.BBS
     {
 
         /// <summary>
-        /// txTitle コントロール。
+        /// ltName コントロール。
         /// </summary>
         /// <remarks>
         /// 自動生成されたフィールド。
         /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txTitle;
+        protected global::System.Web.UI.WebControls.Literal ltName;
 
         /// <summary>
-        /// txContent コントロール。
+        /// tbTitle コントロール。
         /// </summary>
         /// <remarks>
         /// 自動生成されたフィールド。
         /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txContent;
+        protected global::System.Web.UI.WebControls.TextBox tbTitle;
+
+        /// <summary>
+        /// tbContent コントロール。
+        /// </summary>
+        /// <remarks>
+        /// 自動生成されたフィールド。
+        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox tbContent;
+
+        /// <summary>
+        /// btPost コントロール。
+        /// </summary>
+        /// <remarks>
+        /// 自動生成されたフィールド。
+        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btPost;
 
         /// <summary>
         /// rptBBS コントロール。

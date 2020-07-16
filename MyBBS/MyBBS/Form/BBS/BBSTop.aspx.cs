@@ -13,6 +13,7 @@ using System.Web.UI.WebControls;
 using w2.Common.Sql;
 using w2.Common;
 using System.IO;
+using MyBBS.Util;
 
 namespace MyBBS.Form.BBS
 {
@@ -38,18 +39,25 @@ namespace MyBBS.Form.BBS
 
             if (user != null)
             {
+                // セッション追加
+                Session[BBSConst.SESSION_NAME_LOGINID] = user[BBSConst.SQL_PRAM_LOGIN_ID];
+                Session[BBSConst.SESSION_NAME_USERID] = user[BBSConst.SQL_PRAM_USER_ID];
+
                 // Go to BBS
-                //Response.Redirect("BBS.aspx");
+                Response.Redirect("BBS.aspx");
             }
             else
             {
                 // Show Error Message
-                lerrorMessage.Text = Master.GetConfigMessage("LoginError");
+                lerrorMessage.Text = Master.GetConfigMessage(BBSConst.CONFIG_MSG_LOGINERROR);
             }
-            
         }
 
-
+        /// <summary>
+        /// ログイン処理時にユーザ情報を取得する
+        /// </summary>
+        /// <param name="loginId"></param>
+        /// <returns></returns>
         private DataRowView Get(string loginId)
         {
             using (var accessor = new SqlAccessor())
@@ -57,8 +65,8 @@ namespace MyBBS.Form.BBS
             {
                 var ht = new Hashtable
             {
-                {"LoginId", inpLoginId.Value},
-                {"Password", inpPassword.Value}
+                {BBSConst.SQL_PRAM_LOGIN_ID, inpLoginId.Value},
+                {BBSConst.SQL_PRAM_PASSWORD, inpPassword.Value}
             };
                 var dv = statement.SelectSingleStatementWithOC(accessor, ht);
                 return (dv.Count != 0) ? dv[0] : null;

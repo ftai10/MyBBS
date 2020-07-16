@@ -6,6 +6,7 @@ using System.Web.Hosting;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using w2.Common.Sql;
+using MyBBS.Util;
 
 namespace MyBBS.Form.User
 {
@@ -47,8 +48,8 @@ namespace MyBBS.Form.User
             {
                 var ht = new System.Collections.Hashtable
             {
-                {"LoginId", inpLoginId.Value},
-                {"Password", inpPassword.Value}
+                {BBSConst.SQL_PRAM_LOGIN_ID, inpLoginId.Value},
+                {BBSConst.SQL_PRAM_PASSWORD, inpPassword.Value}
             };
                 var result = statement.ExecStatementWithOC(accessor, ht);
                 return (result > 0);

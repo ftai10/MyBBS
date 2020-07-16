@@ -9,6 +9,8 @@ using System.IO;
 using System.Web.SessionState;
 using w2.Common;
 using w2.Common.Logger;
+using MyBBS.Util;
+using System.Security.Policy;
 
 namespace MyBBS
 {
@@ -38,6 +40,7 @@ namespace MyBBS
 		{
 		}
 
+
 		/// <summary>
 		/// ハンドルされていないエラーが発生したときに実行するコード
 		/// </summary>
@@ -52,6 +55,5 @@ namespace MyBBS
 			var errorPageInfo = w2.Common.Web.WebUtility.GetRawUrl(Request) + "   [" + Request.UserHostAddress + "] [" + w2.Common.Util.StringUtility.ToEmpty(Request.UserAgent) + "]";
 			FileLogger.WriteError(errorPageInfo, error);
 		}
-
 	}
 }
