@@ -14,4 +14,18 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="ThreadId" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="5cf377c3-7412-4bd4-9692-bf647be4151f" ChangeDateTime="07/21/2020 13:34:12">
+    <Property Name="ElementName" Value="[dbo].[BBSUser].[CreateData]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[BBSUser]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CreateDate" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="8702a850-cd04-43c7-a91a-09acbbb4b538" ChangeDateTime="07/21/2020 13:34:14">
+    <Property Name="ElementName" Value="[dbo].[BBSUser].[UpdateData]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[BBSUser]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="UpdateDate" />
+  </Operation>
 </Operations>

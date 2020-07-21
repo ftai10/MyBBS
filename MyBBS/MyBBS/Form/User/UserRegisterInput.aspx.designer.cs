@@ -15,6 +15,24 @@ namespace MyBBS.Form.User
     {
 
         /// <summary>
+        /// inpUserName コントロール。
+        /// </summary>
+        /// <remarks>
+        /// 自動生成されたフィールド。
+        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText inpUserName;
+
+        /// <summary>
+        /// revUserName コントロール。
+        /// </summary>
+        /// <remarks>
+        /// 自動生成されたフィールド。
+        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revUserName;
+
+        /// <summary>
         /// inpLoginId コントロール。
         /// </summary>
         /// <remarks>

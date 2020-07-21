@@ -5,8 +5,10 @@ using System.Web;
 using System.Web.Hosting;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Collections;
 using w2.Common.Sql;
 using MyBBS.Util;
+
 
 namespace MyBBS.Form.User
 {
@@ -46,10 +48,12 @@ namespace MyBBS.Form.User
             using (var accessor = new SqlAccessor())
             using (var statement = new SqlStatement("BBSUser", "Insert"))
             {
-                var ht = new System.Collections.Hashtable
+                var ht = new Hashtable
             {
                 {BBSConst.SQL_PRAM_LOGIN_ID, inpLoginId.Value},
-                {BBSConst.SQL_PRAM_PASSWORD, inpPassword.Value}
+                {BBSConst.SQL_PRAM_PASSWORD, inpPassword.Value},
+                {BBSConst.SQL_PRAM_USER_NAME, inpUserName.Value}
+
             };
                 var result = statement.ExecStatementWithOC(accessor, ht);
                 return (result > 0);

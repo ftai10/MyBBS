@@ -44,7 +44,7 @@ namespace MyBBS.Form.BBS
                 Session[BBSConst.SESSION_NAME_USERID] = user[BBSConst.SQL_PRAM_USER_ID];
 
                 // Go to BBS
-                Response.Redirect("BBS.aspx");
+                Response.Redirect(BBSConst.WEB_FORM_BBS);
             }
             else
             {

@@ -15,6 +15,7 @@ namespace MyBBS.Util
         public const string SQL_PRAM_LOGIN_ID = "LoginId";
         public const string SQL_PRAM_USER_ID = "UserId";
         public const string SQL_PRAM_PASSWORD = "Password";
+        public const string SQL_PRAM_USER_NAME = "UserName";
         public const string SQL_PRAM_TITLE = "Title";
         #endregion
 
@@ -30,6 +31,9 @@ namespace MyBBS.Util
 
         #endregion
 
-
+        // WebFormパス
+        #region WEBFORM
+        public const string WEB_FORM_BBS = "~/Form/BBS/BBS.aspx";
+        #endregion
     }
 }
