@@ -1,9 +1,9 @@
 ﻿CREATE TABLE [dbo].[BBSUser]
 (
-	[UserId] INT NOT NULL PRIMARY KEY IDENTITY, 
+	[UserId] UNIQUEIDENTIFIER NOT NULL PRIMARY KEY, 
     [UserName] NVARCHAR(32) NOT NULL,
     [LoginId] NVARCHAR(16) NOT NULL, 
     [Password] VARBINARY(16) NOT NULL, 
     [CreateDate] DATETIME NOT NULL, 
     [UpdateDate] DATETIME NULL
-)
+)   

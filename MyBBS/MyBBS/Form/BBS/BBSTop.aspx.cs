@@ -35,11 +35,12 @@ namespace MyBBS.Form.BBS
             // パラメータチェック
 
             // Refer DB
-            var user = Get(inpLoginId.Value);
+            var user = Get();
 
             if (user != null)
             {
                 // セッション追加
+                Session[BBSConst.SESSION_NAME_USER_NAME] = user[BBSConst.SQL_PRAM_USER_NAME];
                 Session[BBSConst.SESSION_NAME_LOGINID] = user[BBSConst.SQL_PRAM_LOGIN_ID];
                 Session[BBSConst.SESSION_NAME_USERID] = user[BBSConst.SQL_PRAM_USER_ID];
 
@@ -58,7 +59,7 @@ namespace MyBBS.Form.BBS
         /// </summary>
         /// <param name="loginId"></param>
         /// <returns></returns>
-        private DataRowView Get(string loginId)
+        private DataRowView Get()
         {
             using (var accessor = new SqlAccessor())
             using (var statement = new SqlStatement("BBSUser", "Get"))

@@ -33,18 +33,30 @@
     </Parameter>
   </Update>
 
-  <Insert>
+  <Upsert>
     <Statement>
-      <![CDATA[      
+      <![CDATA[
+       UPDATE
+          BBSUser
+        SET
+          UserName = @UserName,
+          LoginId = @LoginId,
+          Password = HASHBYTES('MD5', @Password),
+          UpdateDate = GetDate()
+        WHERE
+          UserId = @UserId
+       IF @@ROWCOUNT = 0
        INSERT INTO BBSUser
           (
+            UserId,
             UserName,
             LoginId, 
             Password,
             CreateDate
           )
-      VALUES 
+       VALUES 
           (
+            @UserId,
             @UserName,
             @LoginId,
             HASHBYTES('MD5', @Password),
@@ -53,11 +65,12 @@
       ]]>
     </Statement>
     <Parameter>
+      <Input Name="UserId" Type="varchar" Size="128" />
       <Input Name="LoginId" Type="nvarchar" Size="16" />
       <Input Name="UserName" Type="nvarchar" Size="32" />
       <Input Name="Password" Type="varchar" Size="16" />
     </Parameter>
-  </Insert>
+  </Upsert>
 
 
 </BBSUser>

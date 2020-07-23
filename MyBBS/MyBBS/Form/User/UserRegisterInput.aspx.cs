@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 using System.Collections;
 using w2.Common.Sql;
 using MyBBS.Util;
-
+using System.Web.UI.HtmlControls;
 
 namespace MyBBS.Form.User
 {
@@ -18,7 +18,8 @@ namespace MyBBS.Form.User
         {
             if(!IsPostBack)
             {
-
+                //ページ名の設定
+                ltPageTitle.Text += Session[BBSConst.SESSION_NAME_USERID] == null? "登録" : "編集";
             }
         }
 
@@ -27,37 +28,22 @@ namespace MyBBS.Form.User
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        protected void btnRegister_Click(object sender, EventArgs e)
+        protected void btnConfirm_Click(object sender, EventArgs e)
         {
+            // Vaild
+            Validate(BBSConst.VALIDATE_GROUP_REQIRED);
 
-            if(InsertUser())
-            {
-                btnRegister.Text = "done";
+            if (Page.IsValid) {
+
+                // 入力値の設定
+                Session[BBSConst.SESSION_NAME_TEMP_USER_NAME] = inpUserName.Value;
+                Session[BBSConst.SESSION_NAME_TEMP_LOGINID] = inpLoginId.Value;
+                Session[BBSConst.SESSION_NAME_TEMP_PASSWORD] = inpPassword.Value;
+
+                // 確認画面へ遷移する
+                Response.Redirect(BBSConst.WEB_FORM_USER_CONFIRM);
             }
-            // 確認画面へ遷移する
-            btnRegister.Enabled = false;
-            
-        }
 
-        /// <summary>
-        /// ログインユーザを登録する
-        /// </summary>
-        /// <returns></returns>
-        private bool InsertUser()
-        {
-            using (var accessor = new SqlAccessor())
-            using (var statement = new SqlStatement("BBSUser", "Insert"))
-            {
-                var ht = new Hashtable
-            {
-                {BBSConst.SQL_PRAM_LOGIN_ID, inpLoginId.Value},
-                {BBSConst.SQL_PRAM_PASSWORD, inpPassword.Value},
-                {BBSConst.SQL_PRAM_USER_NAME, inpUserName.Value}
-
-            };
-                var result = statement.ExecStatementWithOC(accessor, ht);
-                return (result > 0);
-            }
         }
     }
 }

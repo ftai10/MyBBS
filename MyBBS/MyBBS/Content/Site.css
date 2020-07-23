@@ -29,3 +29,28 @@ textarea {
         padding: 0;
     }
 }
+
+.Origin {
+    background-color: azure;
+    margin-top: 20px;
+    border: solid;
+    border-width: 1px;
+}
+
+.Res {
+    background-color: azure;
+    margin-left: 20px;
+    margin-top: 1px;
+    border: solid;
+    border-width: 1px;
+}
+
+.TextArea {
+    background-color: azure;
+    font-size: 16px;
+    font-weight: 300;
+    margin-left: 20px;
+    border: 0px;
+    padding: 0px;
+    white-space: pre-wrap;
+}

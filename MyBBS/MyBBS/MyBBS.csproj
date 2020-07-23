@@ -129,6 +129,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="App_Data\CustomMessageSettings.config" />
     <Content Include="Xml\Db\BBSUser.xml" />
+    <Content Include="Xml\Db\Thread.xml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

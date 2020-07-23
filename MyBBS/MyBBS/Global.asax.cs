@@ -54,6 +54,9 @@ namespace MyBBS
 			// ログ出力
 			var errorPageInfo = w2.Common.Web.WebUtility.GetRawUrl(Request) + "   [" + Request.UserHostAddress + "] [" + w2.Common.Util.StringUtility.ToEmpty(Request.UserAgent) + "]";
 			FileLogger.WriteError(errorPageInfo, error);
+
+			// エラーページへ遷移する
+			Response.Redirect(BBSConst.WEB_FORM_ERROR);
 		}
 	}
 }

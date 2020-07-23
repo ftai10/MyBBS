@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Thread>
+  
+  <Get>
+    <Statement>
+      <![CDATA[
+      CREATE TABLE #TEMPThread(
+        ThreadId int NOT NULL,
+        SortNo int NOT NULL
+      )
+      
+      INSERT INTO #TEMPThread
+        SELECT
+          ThreadId,
+          ROW_NUMBER() OVER (ORDER BY createDate DESC)
+        FROM
+          Thread
+        WHERE
+          isOrigin = 1 and
+          isDeleted = 0
+          
+      SELECT
+         Thread.ThreadId
+        ,isOrigin
+        ,BBSUser.UserId
+        ,BBSUser.UserName        
+        ,Thread.CreateDate
+        ,Thread.UpdateDate
+        ,OriginThreadId
+        ,Title
+        ,PostText
+      FROM
+        #TEMPThread
+	      INNER JOIN Thread ON
+		      #TEMPThread.ThreadId = Thread.ThreadId OR
+		      #TEMPThread.ThreadId = Thread.OriginThreadId
+	      INNER JOIN BBSUser ON
+		      Thread.UserId = BBSUser.UserId
+      WHERE
+        isDeleted = 0 AND
+        SortNo > @ThreadFrom AND
+        SortNo <= @ThreadTo
+       ORDER BY
+         sortNo,
+         isOrigin DESC,
+         Thread.CreateDate DESC
+      ]]>
+    </Statement>
+    <Parameter>
+      <Input Name="ThreadFrom" Type="Int" />
+      <Input Name="ThreadTo" Type="Int" />
+    </Parameter>
+  </Get>
+  <Upsert>
+    <Statement>
+      <![CDATA[
+      
+        UPDATE
+          Thread
+        SET
+          Title = CASE WHEN @IsDeleted = 1 THEN Title ELSE @Title END ,
+          PostText = CASE WHEN @IsDeleted = 1 THEN PostText ELSE @PostText END,
+          UpdateDate = GetDate(),
+          IsDeleted = @IsDeleted
+        WHERE
+          ThreadId = @ThreadId
+       IF @@ROWCOUNT = 0
+       INSERT INTO Thread
+          (
+            isOrigin,
+            UserId, 
+            CreateDate,
+            Title,
+            PostText,
+            IsDeleted,
+            OriginThreadId
+          )
+      VALUES 
+          (
+            CASE WHEN @OriginThreadId > 0 THEN 0 ELSE 1 END,
+            @UserId,
+            GetDate(),
+            @Title,
+            @PostText,
+            0, --False
+            @OriginThreadId
+           )
+      ]]>
+    </Statement>
+    <Parameter>
+      <Input Name="UserId" Type="varchar" Size="128" />
+      <Input Name="Title" Type="nvarchar" Size="128" />
+      <Input Name="PostText" Type="nvarchar" Size="1024" />
+      <Input Name="ThreadId" Type="int"/>
+      <Input Name="IsDeleted" Type="int" />
+      <Input Name="OriginThreadId" Type="int"/>
+
+    </Parameter>
+  </Upsert>
+
+
+</Thread>

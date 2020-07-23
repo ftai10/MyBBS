@@ -15,6 +15,15 @@ namespace MyBBS.Form.User
     {
 
         /// <summary>
+        /// ltPageTitle コントロール。
+        /// </summary>
+        /// <remarks>
+        /// 自動生成されたフィールド。
+        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal ltPageTitle;
+
+        /// <summary>
         /// inpUserName コントロール。
         /// </summary>
         /// <remarks>
@@ -31,6 +40,15 @@ namespace MyBBS.Form.User
         /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator revUserName;
+
+        /// <summary>
+        /// reqUserName コントロール。
+        /// </summary>
+        /// <remarks>
+        /// 自動生成されたフィールド。
+        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqUserName;
 
         /// <summary>
         /// inpLoginId コントロール。
@@ -51,6 +69,15 @@ namespace MyBBS.Form.User
         protected global::System.Web.UI.WebControls.RegularExpressionValidator revLoginId;
 
         /// <summary>
+        /// reqLoginId コントロール。
+        /// </summary>
+        /// <remarks>
+        /// 自動生成されたフィールド。
+        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqLoginId;
+
+        /// <summary>
         /// inpPassword コントロール。
         /// </summary>
         /// <remarks>
@@ -69,12 +96,21 @@ namespace MyBBS.Form.User
         protected global::System.Web.UI.WebControls.RegularExpressionValidator revPassword;
 
         /// <summary>
-        /// btnRegister コントロール。
+        /// reqPassword コントロール。
         /// </summary>
         /// <remarks>
         /// 自動生成されたフィールド。
         /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnRegister;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqPassword;
+
+        /// <summary>
+        /// btnConfirm コントロール。
+        /// </summary>
+        /// <remarks>
+        /// 自動生成されたフィールド。
+        /// 変更するには、フィールドの宣言をデザイナー ファイルから分離コード ファイルに移動します。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnConfirm;
     }
 }

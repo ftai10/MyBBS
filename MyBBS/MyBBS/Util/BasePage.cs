@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using MyBBS.Util;
 
 namespace MyBBS.Util
 {
@@ -10,11 +11,11 @@ namespace MyBBS.Util
         protected override void OnInit(EventArgs e)
         {
             // 有効なセッションがなく、セッションが必要なパスにアクセスした場合は、トップにリダイレクト
-            if (Session[BBSConst.SESSION_NAME_USERID] == null &&
+            if (Session[BBSConst.SESSION_NAME_LOGINID] == null &&
                 this.NonSessionPahts().Contains(this.Page.AppRelativeVirtualPath) == false)
             {
 
-                Response.Redirect("~/Form/BBS/BBSTop.aspx");
+                Response.Redirect(BBSConst.WEB_FROM_BBS_TOP);
             }
         }
 
