@@ -1,2 +1,2 @@
-# MyBBS
-掲示板アプリ
+# MockApps
+ASP.NET w/SQLServer
